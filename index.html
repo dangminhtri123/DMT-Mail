@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMT MAIL | Email Tạm Thời Cao Cấp</title>
+    <meta name="description" content="Dịch vụ email tạm thời riêng tư, an toàn và nhanh chóng. DMT MAIL - Giải pháp tránh spam hiệu quả.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="background-canvas">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <div class="app-layout">
+        <header class="header">
+            <div class="brand">
+                <div class="logo-wrapper">
+                    <i data-lucide="shield-check" class="logo-icon"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">DMT MAIL</span>
+                    <span class="brand-tagline">Secure & Private</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="connection-pill">
+                    <span class="pulse-dot"></span>
+                    <span id="connection-status">Đang kết nối...</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-container">
+            <div class="hero">
+                <h1 class="hero-title">Giải Pháp <span class="text-gradient">Email Tạm Thời</span> Thông Minh</h1>
+                <p class="hero-sub">Tạo địa chỉ email ngẫu nhiên hoặc theo ý muốn để đăng ký dịch vụ mà không lo bị spam.</p>
+            </div>
+
+            <div class="control-card glass-panel">
+                <div class="config-tabs">
+                    <button class="tab-btn active" data-tab="random">
+                        <i data-lucide="shuffle"></i> Ngẫu Nhiên
+                    </button>
+                    <button class="tab-btn" data-tab="custom">
+                        <i data-lucide="edit-3"></i> Tùy Chỉnh
+                    </button>
+                </div>
+
+                <div class="address-box">
+                    <div id="random-ui" class="config-view active">
+                         <div class="display-container">
+                            <span id="email-address">generating...</span>
+                         </div>
+                    </div>
+                    
+                    <div id="custom-ui" class="config-view">
+                        <div class="input-group">
+                            <input type="text" id="custom-username" placeholder="Nhập tên mail muốn tạo..." maxlength="30">
+                            <span class="domain-label">@dagtridev.site</span>
+                        </div>
+                    </div>
+
+                    <div class="action-row">
+                        <button id="create-btn" class="primary-btn">
+                            <i data-lucide="plus-circle"></i> Tạo Mới
+                        </button>
+                        <button id="copy-btn" class="secondary-btn" title="Sao chép">
+                            <i data-lucide="copy"></i> Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inbox-card glass-panel">
+                <div class="inbox-header">
+                    <div class="inbox-title">
+                        <i data-lucide="inbox"></i>
+                        <h2>Hộp Thư Đến</h2>
+                        <span class="inbox-badge" id="mail-count">0</span>
+                    </div>
+                    <button id="reload-inbox-btn" class="reload-btn" title="Tải lại hòm thư">
+                        <i data-lucide="refresh-cw"></i> Làm mới
+                    </button>
+                </div>
+
+                <div id="mail-list" class="mail-list">
+                    <!-- Dynamic Content -->
+                    <div id="empty-state" class="empty-state">
+                        <div class="empty-illu">
+                            <i data-lucide="mail-search"></i>
+                        </div>
+                        <h3>Chưa có thư mới</h3>
+                        <p>Đang chờ email gửi đến địa chỉ của bạn...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 DMT MAIL - <span class="text-gradient">dagtridev.site</span></p>
+        </footer>
+    </div>
+
+    <!-- Modal Email Detail -->
+    <div id="mail-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-wrapper">
+            <div class="modal-content glass-panel">
+                <div class="modal-header">
+                    <button class="close-modal" id="close-modal">
+                        <i data-lucide="x"></i>
+                    </button>
+                    <div class="sender-profile">
+                        <div class="avatar" id="modal-avatar">?</div>
+                        <div class="details">
+                            <h3 id="modal-subject">Subject</h3>
+                            <p id="modal-from">from@example.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body" id="mail-body-content">
+                    <!-- Email body goes here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
